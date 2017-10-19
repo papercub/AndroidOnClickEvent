@@ -1,6 +1,7 @@
 package com.example.navadroid.androidonclickevent;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -33,6 +34,8 @@ public class Option4Activity extends AppCompatActivity {
         initOnClickListener();
         // To register click event to view
         findViewById(R.id.btn_process_4).setOnClickListener(onClickListener);
+        findViewById(R.id.btn_back).setOnClickListener(onClickListener);
+        findViewById(R.id.btn_next).setOnClickListener(onClickListener);
     }
 
     // You don't have to bind any functions to "android:onClick" in layout XML file.
@@ -43,6 +46,13 @@ public class Option4Activity extends AppCompatActivity {
                 switch (v.getId()) {
                     case R.id.btn_process_4:
                         greet();
+                        break;
+                    case R.id.btn_back:
+                        finish();
+                        break;
+                    case R.id.btn_next:
+                        Intent intent = new Intent(Option4Activity.this, Option5Activity.class);
+                        startActivity(intent);
                         break;
                 }
                 hideKeyboardInput(v);

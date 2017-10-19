@@ -31,6 +31,7 @@ public class Option5Activity extends AppCompatActivity {
     private void initView(){
         // To register click event to view
         findViewById(R.id.btn_process_5).setOnClickListener(new InnerOnClickListener());
+        findViewById(R.id.btn_back).setOnClickListener(new InnerOnClickListener());
     }
 
     // A class that handles all of click events
@@ -41,6 +42,9 @@ public class Option5Activity extends AppCompatActivity {
             switch (v.getId()) {
                 case R.id.btn_process_5:
                     greet();
+                    break;
+                case R.id.btn_back:
+                    finish();
                     break;
             }
             hideKeyboardInput(v);
